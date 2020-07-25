@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    image: python:3.8-alpine
+    working_dir: /app
+    volumes:
+      - ./app:/app
+      - ./lib:/pip-lib
+      - ./pip-cache:/root/.cache/pip
+    environment:
+      PYTHONPATH: /pip-lib
